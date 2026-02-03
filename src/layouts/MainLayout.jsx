@@ -1,31 +1,18 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import MobileView from '../pages/MobileView';
-import SatgasDashboard from '../pages/SatgasDashboard';
-import Login from '../pages/Login';
+import Auth from '../pages/Auth';
+import CivitasDashboard from '../pages/CivitasDashboard'; // Nama Baru
+import SatgasDashboard from '../pages/SatgasDashboard';   // Nama Baru
 
-const MainLayout = () => {
-  const { role } = useApp();
+export default function MainLayout() {
+  const { user, role } = useApp();
 
-  // 1. Belum Login
-  if (!role) return <Login />;
+  // 1. Belum Login -> Ke Auth
+  if (!user) return <Auth />;
 
-  // 2. Role Mahasiswa (Responsive Layout)
-  if (role === 'mhs') {
-    return (
-      <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-        {/* Tidak ada frame HP lagi, langsung render komponen responsif */}
-        <MobileView />
-      </div>
-    );
-  }
+  // 2. Role Satgas -> Ke Dashboard Satgas
+  if (role === 'satgas') return <SatgasDashboard />;
 
-  // 3. Role Satgas (Full Dashboard)
-  if (role === 'satgas') {
-    return <SatgasDashboard />;
-  }
-
-  return null;
-};
-
-export default MainLayout;
+  // 3. Sisanya (Mhs/Dosen/Staf) -> Ke Dashboard Civitas
+  return <CivitasDashboard />;
+}
