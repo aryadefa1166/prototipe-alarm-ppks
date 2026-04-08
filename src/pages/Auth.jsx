@@ -26,7 +26,7 @@ export default function Auth() {
             <div className="w-12 h-12 bg-red-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-600/30">
               <Shield size={24} className="text-white" />
             </div>
-            <span className="font-bold tracking-widest text-sm text-slate-300">INSTRUMEN RISET</span>
+            <span className="font-bold tracking-widest text-sm text-slate-300">INSTRUMEN PENELITIAN</span>
           </div>
 
           <div className="relative z-10 mt-auto">
