@@ -37,12 +37,12 @@ export default function CivitasDashboard() {
            </div>
         </div>
 
-        {/* PROFIL & LOGOUT DI KANAN (Otomatis seimbang karena tidak ada tab di tengah) */}
+        {/* PROFIL & LOGOUT DI KANAN */}
         <div className="flex items-center gap-4">
            <span className="text-sm font-bold text-slate-600">Halo, {user?.name || 'Civitas Akademika'}</span>
            <button 
              onClick={logout} 
-             className="px-4 py-2 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-xl border border-emerald-100 hover:bg-emerald-100 transition-colors"
+             className="px-4 py-2 bg-red-50 text-red-600 text-xs font-bold rounded-xl border border-red-100 hover:bg-red-100 transition-colors"
            >
              Keluar
            </button>
@@ -55,7 +55,7 @@ export default function CivitasDashboard() {
             <Shield className="text-emerald-700" size={24} />
             <span className="font-black text-slate-800 text-lg tracking-tight">ALARM PPK</span>
          </div>
-         <button onClick={logout} className="text-xs font-bold text-slate-400 hover:text-emerald-700 transition-colors">Keluar</button>
+         <button onClick={logout} className="text-xs font-bold text-slate-400 hover:text-red-600 transition-colors">Keluar</button>
       </div>
 
       {/* --- MAIN CONTENT (SINGLE VIEW) --- */}
